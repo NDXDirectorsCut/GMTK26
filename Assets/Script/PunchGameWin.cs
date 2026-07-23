@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PunchGameWin : MonoBehaviour
 {
+    public bool loseOnPunch;
     SpriteButton button;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,7 +15,14 @@ public class PunchGameWin : MonoBehaviour
     {
         if(button.clicked)
         {
-            transform.root.GetComponentInChildren<MinigameLogic>().successed = true;
+            if(loseOnPunch == false)
+            {
+                transform.root.GetComponentInChildren<MinigameLogic>().successed = true;
+            }
+            else
+            {
+                transform.root.GetComponentInChildren<MinigameLogic>().failed = true;
+            }
         }        
     }
 }

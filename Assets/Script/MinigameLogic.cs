@@ -8,6 +8,7 @@ public class MinigameLogic : MonoBehaviour
     public int gameTime = 5;
     public bool failed = false;
     public bool successed = false;
+    public bool successOnWait = false;
     int activeTime;
     TMP_Text timerText;
 
@@ -32,7 +33,15 @@ public class MinigameLogic : MonoBehaviour
             activeTime--;
             if(activeTime == 0)
             {
-                failed = true;
+                if(successOnWait == false)
+                {
+                    failed = true;
+                }
+                else
+                {
+                    successed = true;
+                }
+                
             }
         }
     }

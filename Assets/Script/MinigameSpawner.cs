@@ -36,8 +36,6 @@ public class MinigameSpawner : MonoBehaviour
 
                 StartCoroutine(Transition(activeMinigame));
                 activeMinigame = null;
-                
-                
             }
         }
         
@@ -96,8 +94,8 @@ public class MinigameSpawner : MonoBehaviour
         newGame.SetActive(false);
         MinigameLogic newGameLogic = newGame.GetComponentInChildren<MinigameLogic>();
         newGameLogic.gameTime = newGameData.baseTime - newGameData.timeDecrease * level;
-        if(newGameLogic.gameTime <= 0)
-            newGameLogic.gameTime = 1;
+        if(newGameLogic.gameTime <= newGameData.minTime)
+            newGameLogic.gameTime = newGameData.minTime;
         yield return new WaitForSecondsRealtime(transitionTime);
         newGame.SetActive(true);
         activeMinigame = newGameLogic;  
