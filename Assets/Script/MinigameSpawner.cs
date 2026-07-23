@@ -27,12 +27,20 @@ public class MinigameSpawner : MonoBehaviour
         {
             if(activeMinigame.failed == true || activeMinigame.successed == true)
             {
-               StartCoroutine(Transition(activeMinigame));
-               activeMinigame = null;
-               gamesPlayed++;
-               level = gamesPlayed/levelUp;
+                gamesPlayed++;
+                if(activeMinigame.failed == true)
+                {
+                    lives--;
+                }
+                level = gamesPlayed/levelUp;
+
+                StartCoroutine(Transition(activeMinigame));
+                activeMinigame = null;
+                
+                
             }
         }
+        
     }
 
     void FadeOut()
@@ -61,18 +69,28 @@ public class MinigameSpawner : MonoBehaviour
 
         GameObject tempTransition = Instantiate(transitionScreen, Vector3.zero, Quaternion.identity);
         tempTransition.SetActive(false);
+        
+        int id = Random.Range(1,minigames.Count);
+        MinigameData newGameData = minigames[id];
+        tempTransition.transform.Find("Cover").GetComponentInChildren<SpriteRenderer>().sprite = newGameData.gameCover;
+
+
         yield return new WaitForSecondsRealtime(1f);
+
+        if(lives == 0)
+        {
+            Application.Quit();
+        }
 
         FadeIn();
         tempTransition.SetActive(true);
         Destroy(tempTransition,transitionTime);
-        StartCoroutine(PickNewMinigame());
+        StartCoroutine(SpawnMinigame(id));
         yield return null;
     }
 
-    IEnumerator PickNewMinigame()
+    IEnumerator SpawnMinigame(int id)
     {
-        int id = Random.Range(1,minigames.Count);
         MinigameData newGameData = minigames[id];
         GameObject newGame = Instantiate(newGameData.minigame, Vector3.zero, Quaternion.identity);
         newGame.SetActive(false);

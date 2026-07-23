@@ -5,6 +5,7 @@ using TMPro;
 public class MinigameData : ScriptableObject
 {
     public GameObject minigame;
+    public Sprite gameCover;
     public int baseTime;
     public int timeDecrease;
 }
