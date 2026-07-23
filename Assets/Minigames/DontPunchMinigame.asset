@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67bc05e13735a89408d2729aef55c09b, type: 3}
-  m_Name: PunchMinigame
+  m_Name: DontPunchMinigame
   m_EditorClassIdentifier: Assembly-CSharp::MinigameObject
-  minigame: {fileID: 4536742614353702088, guid: ea6346c1726e156408854891a9aced05, type: 3}
+  minigame: {fileID: 5105775712514329129, guid: d2fdf6fde10b522449a32e82bc3d948e, type: 3}
   gameCover: {fileID: 21300000, guid: 0b751d88b7ae84d4384f3013f54efa48, type: 3}
   baseTime: 5
   minTime: 1

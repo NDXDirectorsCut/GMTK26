@@ -15,4 +15,5 @@ MonoBehaviour:
   minigame: {fileID: 2707916461007105253, guid: c2b40abc594d0404fbd41efdb714c881, type: 3}
   gameCover: {fileID: 21300000, guid: f40648a82892eef41b5d130091ba262c, type: 3}
   baseTime: 8
+  minTime: 2
   timeDecrease: 2
