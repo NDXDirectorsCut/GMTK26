@@ -368,10 +368,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PunchMinigame
       objectReference: {fileID: 0}
-    - target: {fileID: 4536742614353702088, guid: ea6346c1726e156408854891a9aced05, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6724315377787588455, guid: ea6346c1726e156408854891a9aced05, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
