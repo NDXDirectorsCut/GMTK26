@@ -14,7 +14,7 @@ public class ButtonSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(button.clicked)
+        if(button.clickDown)
         {
             sound.Play();
         }
