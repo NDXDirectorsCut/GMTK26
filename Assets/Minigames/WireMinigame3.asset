@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bc05e13735a89408d2729aef55c09b, type: 3}
   m_Name: WireMinigame3
   m_EditorClassIdentifier: Assembly-CSharp::MinigameObject
-  minigame: {fileID: 259499559854818162, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+  minigame: {fileID: 9071985045489585073, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
   gameCover: {fileID: 21300000, guid: f40648a82892eef41b5d130091ba262c, type: 3}
   baseTime: 8
   minTime: 3

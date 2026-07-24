@@ -295,7 +295,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 913138790371e0640b5e218bd0a36b68, type: 3}
---- !u!1001 &5156387621883441104
+--- !u!1001 &4280476698364100987
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -303,59 +303,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 259499559854818162, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
-      propertyPath: m_Name
-      value: WireMinigameVariant2
-      objectReference: {fileID: 0}
-    - target: {fileID: 259499559854818162, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4103
+      value: 0.25812
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5393
+      value: 0.82558
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1482217642264178192, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+    - target: {fileID: 7705133651397011155, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071985045489585073, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
+      propertyPath: m_Name
+      value: WireMinigameVariant3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071985045489585073, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 05a1878014841384db07dc5a618f6ea6, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 8a2d5c737d2b9794bbe6f7086610e314, type: 3}
 --- !u!1001 &5507214318580267666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,4 +489,4 @@ SceneRoots:
   - {fileID: 5507214318580267666}
   - {fileID: 5812925395193196416}
   - {fileID: 3689654732102107883}
-  - {fileID: 5156387621883441104}
+  - {fileID: 4280476698364100987}
