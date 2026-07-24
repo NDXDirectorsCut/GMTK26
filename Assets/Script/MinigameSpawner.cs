@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MinigameSpawner : MonoBehaviour
 {
     public int level = 0;
-    public int levelUp = 3;
+    public int levelUp = 5;
     public int lives = 3;
     public int gamesPlayed = 0;
     public List<MinigameData> minigames = new();
@@ -41,28 +41,33 @@ public class MinigameSpawner : MonoBehaviour
         
     }
 
-    void FadeOut()
+    public void FadeOut()
     {
         GameObject tempFade = Instantiate(fadeOutScreen,Vector3.zero,Quaternion.identity);
         Destroy(tempFade,1f);
     }
 
-    void FadeIn()
+    public void FadeIn()
     {
         GameObject tempFade = Instantiate(fadeInScreen,Vector3.zero,Quaternion.identity);
         Destroy(tempFade,1f);
     }
 
-    IEnumerator Transition(MinigameLogic game)
+    public IEnumerator Transition(MinigameLogic game)
     {
-        GameObject minigameObject = game.gameObject;
-        MonoBehaviour[] scripts = minigameObject.GetComponentsInChildren<MonoBehaviour>();
-        foreach(MonoBehaviour script in scripts)
+        if(game != null)
         {
-            script.enabled = false;
+            GameObject minigameObject = game.gameObject;
+            MonoBehaviour[] scripts = minigameObject.GetComponentsInChildren<MonoBehaviour>();
+            foreach(MonoBehaviour script in scripts)
+            {
+                script.enabled = false;
+            }
+            Destroy(game.gameObject,1f);
+            
+            
         }
-        Destroy(game.gameObject,1f);
-        
+
         FadeOut();
 
         GameObject tempTransition = Instantiate(transitionScreen, Vector3.zero, Quaternion.identity);
