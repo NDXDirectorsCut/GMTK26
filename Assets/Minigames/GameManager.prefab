@@ -219,6 +219,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18a4ede146cc9f0438e51661fd0e3e7a, type: 2}
   - {fileID: 11400000, guid: e0ec7738e145c1945836e10a54b0165b, type: 2}
   - {fileID: 11400000, guid: f21d871f9cb41a84098428848420d678, type: 2}
+  - {fileID: 11400000, guid: a8c75cc47bf05774982df010169d128e, type: 2}
+  - {fileID: 11400000, guid: 17c415e7a0704014da97388538be6038, type: 2}
   activeMinigame: {fileID: 0}
   transitionScreen: {fileID: 3276353789003806846, guid: 14ca08643ffdf8a4985693ff996a088f, type: 3}
   fadeOutScreen: {fileID: 5941942218665499584, guid: 3ab27125e8478be4a8135d02dcaabcb1, type: 3}
