@@ -1,16 +1,16 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 
-public class StartButton : MonoBehaviour
+public class QuitButton : MonoBehaviour
 {
-    MinigameSpawner gameManager;
     SpriteButton button;
+    MinigameSpawner gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager = transform.root.GetComponentInChildren<MinigameSpawner>();
         button = GetComponentInChildren<SpriteButton>();
+        gameManager = transform.root.GetComponentInChildren<MinigameSpawner>();
     }
 
     // Update is called once per frame
@@ -18,14 +18,14 @@ public class StartButton : MonoBehaviour
     {
         if(button.clickDown)
         {
-            StartCoroutine(StartGame());    
+            StartCoroutine(Quit());
         }
     }
 
-    IEnumerator StartGame()
+    IEnumerator Quit()
     {
-        StartCoroutine(gameManager.Transition(null));
+        gameManager.FadeOut();
         yield return new WaitForSecondsRealtime(1f);
-        transform.parent.parent.gameObject.SetActive(false);
+        Application.Quit();
     }
 }
