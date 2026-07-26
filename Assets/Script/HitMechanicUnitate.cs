@@ -5,6 +5,8 @@ public class HitMechanicUnitate : MonoBehaviour
     public GameObject FirstUnit, SecondUnit;
     public int HitCounter = 0;
     bool ok = true;
+    public GameObject Explosion;
+    public bool Boomed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,8 +31,11 @@ public class HitMechanicUnitate : MonoBehaviour
                 {
                     FirstUnit.SetActive(false);
                     SecondUnit.SetActive(true);
+                    GameObject FunnyBoom = Instantiate(Explosion, transform.position, Quaternion.identity);
+                    FunnyBoom.transform.localScale = Vector3.one * 5f;
                     transform.position = new Vector3 (transform.position.x-1, transform.position.y, transform.position.z);
                     HitCounter++;
+                    Boomed = true;
                 }
                 ok = false;
             }
