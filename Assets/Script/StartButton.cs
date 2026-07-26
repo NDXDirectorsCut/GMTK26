@@ -25,7 +25,7 @@ public class StartButton : MonoBehaviour
     IEnumerator StartGame()
     {
         StartCoroutine(gameManager.Transition(null));
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.9f);
         transform.parent.parent.gameObject.SetActive(false);
     }
 }

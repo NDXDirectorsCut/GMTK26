@@ -11,6 +11,7 @@ public class MinigameSpawner : MonoBehaviour
     public List<MinigameData> minigames = new();
     public MinigameLogic activeMinigame;
     public GameObject transitionScreen;
+    public GameObject deathScreen;
     public GameObject fadeOutScreen;
     public GameObject fadeInScreen;
     public float transitionTime = 2.5f;
@@ -27,7 +28,6 @@ public class MinigameSpawner : MonoBehaviour
         {
             if(activeMinigame.failed == true || activeMinigame.successed == true)
             {
-                gamesPlayed++;
                 if(activeMinigame.failed == true)
                 {
                     lives--;
@@ -64,12 +64,10 @@ public class MinigameSpawner : MonoBehaviour
                 script.enabled = false;
             }
             Destroy(game.gameObject,1f);
-            
-            
         }
 
         FadeOut();
-
+        
         GameObject tempTransition = Instantiate(transitionScreen, Vector3.zero, Quaternion.identity);
         tempTransition.SetActive(false);
         
@@ -77,18 +75,35 @@ public class MinigameSpawner : MonoBehaviour
         MinigameData newGameData = minigames[id];
         tempTransition.transform.Find("Cover").GetComponentInChildren<SpriteRenderer>().sprite = newGameData.gameCover;
 
+        yield return new WaitForSecondsRealtime(0.9f);
 
-        yield return new WaitForSecondsRealtime(1f);
+        FadeIn();
 
         if(lives == 0)
         {
-            Application.Quit();
+            StartCoroutine(Death());
         }
+        else
+        {
+            gamesPlayed++;
+            tempTransition.SetActive(true);
+            Destroy(tempTransition,transitionTime);
+            StartCoroutine(SpawnMinigame(id));
+        }
+        yield return null;
+    }
 
-        FadeIn();
-        tempTransition.SetActive(true);
-        Destroy(tempTransition,transitionTime);
-        StartCoroutine(SpawnMinigame(id));
+    IEnumerator Death()
+    {
+        int bestScore = PlayerPrefs.GetInt("BestScore");
+        GameObject newScreen = Instantiate(deathScreen,Vector3.zero,Quaternion.identity);
+        newScreen.transform.parent = transform;
+
+        if(gamesPlayed>bestScore)
+        {
+            PlayerPrefs.SetInt("BestScore",gamesPlayed);
+            bestScore = gamesPlayed;
+        }
         yield return null;
     }
 
@@ -101,7 +116,7 @@ public class MinigameSpawner : MonoBehaviour
         newGameLogic.gameTime = newGameData.baseTime - newGameData.timeDecrease * level;
         if(newGameLogic.gameTime <= newGameData.minTime)
             newGameLogic.gameTime = newGameData.minTime;
-        yield return new WaitForSecondsRealtime(transitionTime);
+        yield return new WaitForSecondsRealtime(transitionTime-0.1f);
         newGame.SetActive(true);
         activeMinigame = newGameLogic;  
         yield return null;
