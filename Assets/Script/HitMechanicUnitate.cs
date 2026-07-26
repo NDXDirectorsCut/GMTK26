@@ -36,6 +36,7 @@ public class HitMechanicUnitate : MonoBehaviour
                     transform.position = new Vector3 (transform.position.x-1, transform.position.y, transform.position.z);
                     HitCounter++;
                     Boomed = true;
+                    gameObject.GetComponent<IsExploded>().Exploded = true;
                 }
                 ok = false;
             }

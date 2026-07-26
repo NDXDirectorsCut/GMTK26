@@ -492,6 +492,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8c75cc47bf05774982df010169d128e, type: 2}
   - {fileID: 11400000, guid: 17c415e7a0704014da97388538be6038, type: 2}
   - {fileID: 11400000, guid: 6d57d3895701cd9438d58eb7040d4425, type: 2}
+  - {fileID: 11400000, guid: 19a3279958bbb314898c907b926c7f00, type: 2}
+  - {fileID: 11400000, guid: aa1cfd87fce13054e82b40b094c85113, type: 2}
+  - {fileID: 11400000, guid: beaf21a8849c60747a76f8417bcbcd97, type: 2}
+  - {fileID: 11400000, guid: 73f6235fbb798064e9045117303b61d2, type: 2}
+  - {fileID: 11400000, guid: 8cd1d1c2f3e83ff449512060bc0e03c5, type: 2}
   activeMinigame: {fileID: 0}
   transitionScreen: {fileID: 3276353789003806846, guid: 14ca08643ffdf8a4985693ff996a088f, type: 3}
   deathScreen: {fileID: 4355483726575309498, guid: 9e03268b3b74efc97ad519eeb2f9751e, type: 3}
