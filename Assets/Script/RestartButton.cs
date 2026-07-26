@@ -26,7 +26,7 @@ public class RestartButton : MonoBehaviour
     IEnumerator Restart()
     {
         gameManager.FadeOut();
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
         Scene activeScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(activeScene.name,LoadSceneMode.Single);
     }

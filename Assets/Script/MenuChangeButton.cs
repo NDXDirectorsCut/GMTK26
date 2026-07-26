@@ -26,7 +26,7 @@ public class MenuChangeButton : MonoBehaviour
     IEnumerator ChangeScreen()
     {
         gameManager.FadeOut();
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
         gameManager.FadeIn();
         fromMenu.SetActive(false);
         toMenu.SetActive(true);

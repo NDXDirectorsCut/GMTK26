@@ -23,6 +23,7 @@ public class FullscreenButton : MonoBehaviour
             {
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
             }
+            mode = !mode;
         }
     }
 }

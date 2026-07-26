@@ -6,6 +6,7 @@ public class StartButton : MonoBehaviour
 {
     MinigameSpawner gameManager;
     SpriteButton button;
+    public AudioSource music;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +26,8 @@ public class StartButton : MonoBehaviour
     IEnumerator StartGame()
     {
         StartCoroutine(gameManager.Transition(null));
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
         transform.parent.parent.gameObject.SetActive(false);
+        music.Play();
     }
 }

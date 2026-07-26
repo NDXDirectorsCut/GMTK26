@@ -9,6 +9,7 @@ public class MinigameSpawner : MonoBehaviour
     public int lives = 3;
     public int gamesPlayed = 0;
     public List<MinigameData> minigames = new();
+    public AudioSource music;
     public MinigameLogic activeMinigame;
     public GameObject transitionScreen;
     public GameObject speedUpScreen;
@@ -58,13 +59,13 @@ public class MinigameSpawner : MonoBehaviour
     public void FadeOut()
     {
         GameObject tempFade = Instantiate(fadeOutScreen,Vector3.zero,Quaternion.identity);
-        Destroy(tempFade,1f);
+        Destroy(tempFade,.9f);
     }
 
     public void FadeIn()
     {
         GameObject tempFade = Instantiate(fadeInScreen,Vector3.zero,Quaternion.identity);
-        Destroy(tempFade,1f);
+        Destroy(tempFade,.9f);
     }
 
     public IEnumerator LevelUp(MinigameLogic game)
@@ -77,7 +78,7 @@ public class MinigameSpawner : MonoBehaviour
             {
                 script.enabled = false;
             }
-            Destroy(game.gameObject,1f);
+            Destroy(game.gameObject,.9f);
         }
 
         FadeOut();
@@ -85,13 +86,13 @@ public class MinigameSpawner : MonoBehaviour
         GameObject tempTransition = Instantiate(speedUpScreen, Vector3.zero, Quaternion.identity);
         tempTransition.SetActive(false);
 
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
 
         FadeIn();
         tempTransition.SetActive(true);
         Destroy(tempTransition,speedUpTime);
 
-        yield return new WaitForSecondsRealtime(speedUpTime-1.1f);
+        yield return new WaitForSeconds(speedUpTime-1f);
 
         StartCoroutine(Transition(null));
 
@@ -108,7 +109,7 @@ public class MinigameSpawner : MonoBehaviour
             {
                 script.enabled = false;
             }
-            Destroy(game.gameObject,1f);
+            Destroy(game.gameObject,.9f);
         }
 
         FadeOut();
@@ -120,7 +121,7 @@ public class MinigameSpawner : MonoBehaviour
         MinigameData newGameData = minigames[id];
         tempTransition.transform.Find("Cover").GetComponentInChildren<SpriteRenderer>().sprite = newGameData.gameCover;
 
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
 
         FadeIn();
 
@@ -132,7 +133,7 @@ public class MinigameSpawner : MonoBehaviour
         {
             gamesPlayed++;
             tempTransition.SetActive(true);
-            Destroy(tempTransition,transitionTime);
+            Destroy(tempTransition,transitionTime-0.1f);
             StartCoroutine(SpawnMinigame(id));
         }
         yield return null;
@@ -140,6 +141,7 @@ public class MinigameSpawner : MonoBehaviour
 
     IEnumerator Death()
     {
+        music.Stop();
         int bestScore = PlayerPrefs.GetInt("BestScore");
         GameObject newScreen = Instantiate(deathScreen,Vector3.zero,Quaternion.identity);
         newScreen.transform.parent = transform;
@@ -161,7 +163,8 @@ public class MinigameSpawner : MonoBehaviour
         newGameLogic.gameTime = newGameData.baseTime - newGameData.timeDecrease * level;
         if(newGameLogic.gameTime <= newGameData.minTime)
             newGameLogic.gameTime = newGameData.minTime;
-        yield return new WaitForSecondsRealtime(transitionTime-0.1f);
+        yield return new WaitForSeconds(transitionTime-0.1f);
+        FadeIn();
         newGame.SetActive(true);
         activeMinigame = newGameLogic;  
         yield return null;

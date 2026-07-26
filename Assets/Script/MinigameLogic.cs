@@ -29,7 +29,7 @@ public class MinigameLogic : MonoBehaviour
     {
         while(activeTime>0)
         {
-            yield return new WaitForSecondsRealtime(0.9f);
+            yield return new WaitForSeconds(0.9f);
             activeTime--;
             if(activeTime == 0)
             {
