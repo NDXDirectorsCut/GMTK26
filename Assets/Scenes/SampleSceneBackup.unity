@@ -249,6 +249,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1417668832195694802, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417668832195694802, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004015673090016814, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 3575338651725287279, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -293,9 +305,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5507734775615617449, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 6314240818329446174, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314240818329446174, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -308,6 +324,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 11083773123182757, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4946648933881519100, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
