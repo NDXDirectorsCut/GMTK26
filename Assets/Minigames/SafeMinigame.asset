@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bc05e13735a89408d2729aef55c09b, type: 3}
+  m_Name: SafeMinigame
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameData
+  minigame: {fileID: 1420781647786359255, guid: 7b9747616fe90e24da3c0616d5329a7e, type: 3}
+  gameCover: {fileID: 21300000, guid: e815089f262b4294eaef6ef46cb526b7, type: 3}
+  baseTime: 8
+  minTime: 5
+  timeDecrease: 1

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class HitMechanicKeyboard : MonoBehaviour
+public class HitMechanicMouse : MonoBehaviour
 {
-    public GameObject FirstKey, SecondKey,ThirdKey;
-    public int HitCounter = 0;
-    bool ok = true;
     public GameObject Explosion;
+    public int HitCounter = 0;
+    public GameObject FirstMouse, SecondMouse;
+    bool ok = true;
     public bool Boomed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +16,7 @@ public class HitMechanicKeyboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HitCounter < 9)
+        if (HitCounter < 4)
         {
             if (ok == true)
             {
@@ -24,22 +24,18 @@ public class HitMechanicKeyboard : MonoBehaviour
                     HitCounter++;
                 if (HitCounter == 1)
                 {
-                    FirstKey.SetActive(true);
+                    FirstMouse.SetActive(true);
                     HitCounter++;
                 }
-                if (HitCounter == 4)
+                if (HitCounter == 3)
                 {
-                    FirstKey.SetActive(false);
-                    SecondKey.SetActive(true);
-                    HitCounter++;
-                }
-                if(HitCounter == 8)
-                {
-                    SecondKey.SetActive(false);
-                    ThirdKey.SetActive(true);
+                    FirstMouse.SetActive(false);
+                    SecondMouse.SetActive(true);
                     GameObject FunnyBoom = Instantiate(Explosion, transform.position, Quaternion.identity);
                     FunnyBoom.transform.localScale = Vector3.one * 5f;
+                    transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
                     HitCounter++;
+                    gameObject.SetActive(false);
                     Boomed = true;
                     gameObject.GetComponent<IsExploded>().Exploded = true;
                 }

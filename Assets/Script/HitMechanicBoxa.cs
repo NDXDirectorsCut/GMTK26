@@ -5,6 +5,7 @@ using UnityEngine;
 public class HitMechanicBoxa : MonoBehaviour
 {
     public GameObject Explosion;
+    public bool Boomed = false;
     bool ok = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,8 @@ public class HitMechanicBoxa : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 90);
             StartCoroutine(Boom());
             ok = false;
+            Boomed = true;
+            gameObject.GetComponent<IsExploded>().Exploded = true;
         }
     }
     IEnumerator Boom()
