@@ -11,14 +11,21 @@ public class MinigameSpawner : MonoBehaviour
     public List<MinigameData> minigames = new();
     public MinigameLogic activeMinigame;
     public GameObject transitionScreen;
+    public GameObject speedUpScreen;
     public GameObject deathScreen;
     public GameObject fadeOutScreen;
     public GameObject fadeInScreen;
     public float transitionTime = 2.5f;
+    public float speedUpTime = 3.5f;
+
+    int levelTrack;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        FadeIn();
+        Application.targetFrameRate = 60;
+        levelTrack = level;
     }
 
     // Update is called once per frame
@@ -34,11 +41,18 @@ public class MinigameSpawner : MonoBehaviour
                 }
                 level = gamesPlayed/levelUp;
 
-                StartCoroutine(Transition(activeMinigame));
+                if(level!=levelTrack)
+                {
+                    StartCoroutine(LevelUp(activeMinigame));
+                }
+                else
+                {
+                    StartCoroutine(Transition(activeMinigame));
+                }
                 activeMinigame = null;
             }
         }
-        
+        levelTrack = level;
     }
 
     public void FadeOut()
@@ -51,6 +65,37 @@ public class MinigameSpawner : MonoBehaviour
     {
         GameObject tempFade = Instantiate(fadeInScreen,Vector3.zero,Quaternion.identity);
         Destroy(tempFade,1f);
+    }
+
+    public IEnumerator LevelUp(MinigameLogic game)
+    {
+        if(game != null)
+        {
+            GameObject minigameObject = game.gameObject;
+            MonoBehaviour[] scripts = minigameObject.GetComponentsInChildren<MonoBehaviour>();
+            foreach(MonoBehaviour script in scripts)
+            {
+                script.enabled = false;
+            }
+            Destroy(game.gameObject,1f);
+        }
+
+        FadeOut();
+
+        GameObject tempTransition = Instantiate(speedUpScreen, Vector3.zero, Quaternion.identity);
+        tempTransition.SetActive(false);
+
+        yield return new WaitForSecondsRealtime(0.9f);
+
+        FadeIn();
+        tempTransition.SetActive(true);
+        Destroy(tempTransition,speedUpTime);
+
+        yield return new WaitForSecondsRealtime(speedUpTime-1.1f);
+
+        StartCoroutine(Transition(null));
+
+        yield return null;
     }
 
     public IEnumerator Transition(MinigameLogic game)

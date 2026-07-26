@@ -119,6 +119,102 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &84940907 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5246922131644724002, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+  m_PrefabInstance: {fileID: 3111001049018308374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &570579243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570579244}
+  - component: {fileID: 570579245}
+  m_Layer: 0
+  m_Name: Vignette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &570579244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570579243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 84940907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &570579245
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570579243}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: cb95cc74695c0e11fa2078ed3351d17c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.92156863}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1001 &1464285500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,9 +389,76 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: lives
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: levelUp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: minigames.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e0ec7738e145c1945836e10a54b0165b, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e0ec7738e145c1945836e10a54b0165b, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f21d871f9cb41a84098428848420d678, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f21d871f9cb41a84098428848420d678, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 18a4ede146cc9f0438e51661fd0e3e7a, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a8c75cc47bf05774982df010169d128e, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 17c415e7a0704014da97388538be6038, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d57d3895701cd9438d58eb7040d4425, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 19a3279958bbb314898c907b926c7f00, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: aa1cfd87fce13054e82b40b094c85113, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: beaf21a8849c60747a76f8417bcbcd97, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73f6235fbb798064e9045117303b61d2, type: 2}
+    - target: {fileID: 8497955475070865566, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      propertyPath: 'minigames.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cd1d1c2f3e83ff449512060bc0e03c5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5246922131644724002, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 570579244}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 219954491390779269, guid: a60a190820206b24bb7a0af61f84ebcf, type: 3}
       insertIndex: -1

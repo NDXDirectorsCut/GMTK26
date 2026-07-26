@@ -7,6 +7,7 @@ public class WinCondition : MonoBehaviour
     public List<GameObject> RedWires = new();
     public List<GameObject> GreenWires = new();
     public GameObject Bandicam;
+    public GameObject BandicamGreen;
     public GameObject Explosion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +29,7 @@ public class WinCondition : MonoBehaviour
             if (k == nrFire)
             {
                 Bandicam.SetActive(false);
+                BandicamGreen.SetActive(true);
                 gameObject.GetComponent<MinigameLogic>().successed = true;
             }
         }
